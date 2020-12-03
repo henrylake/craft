@@ -116,7 +116,16 @@ var wait = () => {
 }
 
 var ship_crops = () => {
+  gameController.codeOrgAPI.repeat(null, () =>
+  gameController.codeOrgAPI.moveToward(null, target, "target")
+  ,[target, "target"], target)
   gameController.codeOrgAPI.checkInventory(null, target)
+}
+
+var return_home = () => {
+  gameController.codeOrgAPI.repeat(null, () =>
+    gameController.codeOrgAPI.moveToward(null, target, "target")
+    ,[target, "target"], target)
 }
 
 
@@ -125,6 +134,7 @@ window.has_crops_at_position = has_crops_at_position
 window.ship_crops = ship_crops
 window.wait = wait
 window.move_forward = move_forward
+window.return_home = return_home
 window.move_direction = move_direction
 window.plant = plant
 window.harvest_crop = harvest_crop
