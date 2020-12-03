@@ -1,8 +1,8 @@
 // Turinglab API set
 var target = 'Player'
-
+var callback = null
 var move_forward = () => {
-  gameController.codeOrgAPI.moveForward(null, target, () => {console.log("finished")});
+  gameController.codeOrgAPI.moveForward(null, target, callback);
 }
 
 var move_direction = (direction) => {
