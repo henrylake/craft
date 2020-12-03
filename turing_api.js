@@ -1,8 +1,8 @@
 // Turinglab API set
 var target = 'Player'
-var callback = null
+
 var move_forward = () => {
-  gameController.codeOrgAPI.moveForward(null, target, callback);
+  gameController.codeOrgAPI.moveForward(null, target, null);
 }
 
 var move_direction = (direction) => {
@@ -124,10 +124,9 @@ var ship_crops = () => {
 
 var return_home = () => {
   gameController.codeOrgAPI.repeat(null, () =>
-    gameController.codeOrgAPI.moveToward(null, target, "target")
-    ,[target, "target"], target)
+    gameController.codeOrgAPI.moveToward(null, target, "home")
+    ,[target, "home"], target)
 }
-
 
 window.turn = turn
 window.has_crops_at_position = has_crops_at_position
