@@ -128,6 +128,42 @@ var return_home = () => {
     ,[target, "home"], target)
 }
 
+var turingHelpers = {
+    "checkBlocksAtPositions": (verificationAPI,blocksAndPositions) => {
+      for(var blockType of Object.keys(blocksAndPositions)) {
+        var blockPlane = blocksAndPositions[blockType][0]
+        var blockPositions = blocksAndPositions[blockType][1]
+            
+        for (let i = 0; i < blockPositions.length; i++) {
+            if(!verificationAPI.isBlockOfTypeAtPositionOnPlane(blockPositions[i], blockType, blockPlane)) {
+                return false;
+              }
+            }
+          }
+      return true;
+    },
+    "getPositionFromCoord": (coords,totalWidth) => {
+      let x = coords[0]
+      let y = coords[1]
+      return y*totalWidth + x
+    },
+    "modifyLevel": (currentLevel,blocksAndPositions) => {
+      let newLevel = Object.assign({}, defaults, currentLevel);
+      for(var blockType of Object.keys(blocksAndPositions)) {
+        var blockPlane = blocksAndPositions[blockType][0]
+        var blockPositions = blocksAndPositions[blockType][1]
+            
+        for (let i = 0; i < blockPositions.length; i++) {
+          console.log(newLevel[blockPlane][getPositionFromCoord(blockPositions[i],10)])
+        newLevel[blockPlane][getPositionFromCoord(blockPositions[i],10)] = blockType
+        }
+            }
+      return newLevel
+    }
+  }
+
+
+window.turingHelpers = turingHelpers
 window.turn = turn
 window.has_crops_at_position = has_crops_at_position
 window.ship_crops = ship_crops
