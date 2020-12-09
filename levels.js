@@ -83,7 +83,7 @@ entities: [["target", 8, 4, 1]]
 
 var turing_levels = {
   planes: {
-    grassplane: [
+    grass: [
       "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass",
       "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass",
       "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass",
@@ -95,7 +95,7 @@ var turing_levels = {
       "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass",
       "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass", "grass",
     ],
-    greenhouse_decoPlane: [
+    greenhouse_deco: [
       "greenhouseFrontDeco", "", "", "greenhouseFrontDeco", "", "", "greenhouseFrontDeco", "", "", "",
       "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "",
@@ -107,7 +107,7 @@ var turing_levels = {
       "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "",
     ],
-    emptyPlane: [
+    empty: [
       "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "",
@@ -119,7 +119,7 @@ var turing_levels = {
       "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "",
     ],
-    greenhouse_fluffPlane: [
+    greenhouse_fluff: [
       "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "",
       "", "", "", "", "", "", "", "", "", "",
