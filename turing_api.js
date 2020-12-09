@@ -128,26 +128,29 @@ var return_home = () => {
     ,[target, "home"], target)
 }
 
-var turingHelpers = {
-    "getPositionFromCoord": (coords,totalWidth) => {
-      let x = coords[0]
-      let y = coords[1]
-      return y*totalWidth + x
-    },
-    "modifyLevel": (currentLevel,blocksAndPositions) => {
-      let newLevel = Object.assign({}, defaults, currentLevel);
-      for(var blockType of Object.keys(blocksAndPositions)) {
-        var blockPlane = blocksAndPositions[blockType][0]
-        var blockPositions = blocksAndPositions[blockType][1]
-            
-        for (let i = 0; i < blockPositions.length; i++) {
-          newLevel[blockPlane][getPositionFromCoord(blockPositions[i],10)] = blockType
-        }
-      }
-      return newLevel
+var getPositionFromCoord = (coords,totalWidth) => {
+  let x = coords[0]
+  let y = coords[1]
+  return y*totalWidth + x
+}
+
+var modifyLevel = (currentLevel,blocksAndPositions) => {
+  let newLevel = Object.assign({}, defaults, currentLevel);
+  for(var blockType of Object.keys(blocksAndPositions)) {
+    var blockPlane = blocksAndPositions[blockType][0]
+    var blockPositions = blocksAndPositions[blockType][1]
+        
+    for (let i = 0; i < blockPositions.length; i++) {
+      newLevel[blockPlane][getPositionFromCoord(blockPositions[i],10)] = blockType
     }
   }
+  return newLevel
+}
 
+var turingHelpers = {
+  "modifyLevel": modifyLevel,
+  "getPositionFromCoord": getPositionFromCoord
+}
 
 window.turingHelpers = turingHelpers
 window.turn = turn
