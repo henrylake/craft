@@ -135,7 +135,7 @@ var getPositionFromCoord = (coords,totalWidth) => {
 }
 
 var modifyLevel = (currentLevel,blocksAndPositions) => {
-  let newLevel = Object.assign({}, defaults, currentLevel);
+  let newLevel = Object.assign({}, currentLevel);
   for(var blockType of Object.keys(blocksAndPositions)) {
     var blockPlane = blocksAndPositions[blockType][0]
     var blockPositions = blocksAndPositions[blockType][1]
@@ -148,8 +148,8 @@ var modifyLevel = (currentLevel,blocksAndPositions) => {
 }
 
 var turingHelpers = {
-  "modifyLevel": modifyLevel,
-  "getPositionFromCoord": getPositionFromCoord
+  modifyLevel,
+  getPositionFromCoord
 }
 
 window.turingHelpers = turingHelpers
