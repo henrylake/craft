@@ -30,7 +30,7 @@ function onComplete(result, level) {
   let testResults = {}
   if(result instanceof Array) {
    for(let i=0; i < result.length; i++) {
-     testResults[i] = {pass:result[i]}
+     testResults[i+1] = {pass:result[i]}
     } 
   } else {
 		testResults = {
