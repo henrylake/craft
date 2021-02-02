@@ -1,4 +1,8 @@
 function onComplete(result) {
+  if(result == "default") {
+    return
+  }
+  
   // check if complete
   completed = true
   if(result instanceof Array) {
