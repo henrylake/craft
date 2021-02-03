@@ -1,5 +1,6 @@
 function onComplete(result) {
   if(result == "default") {
+    window.parent.postMessage({ type: 'runTests'}, '*');
     return
   }
   
