@@ -25,7 +25,7 @@ function onComplete(result, level) {
   } else {
 		completed = result
   }
-
+  
   // send corresponding test results
   let testResults = {}
   if(result instanceof Array) {
@@ -69,6 +69,6 @@ $('#Run_panelButton', window.parent.document).click(function () {
 
 });
 
-$('#reset_panelButton', window.parent.document).click(function () {
+$('#Stop_panelButton', window.parent.document).click(function () {
   gameController.codeOrgAPI.resetAttempt();
 });
