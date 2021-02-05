@@ -69,6 +69,6 @@ $('#Run_panelButton', window.parent.document).click(function () {
 
 });
 
-$('#Stop_panelButton', window.parent.document).click(function () {
+$('#Reset_panelButton', window.parent.document).click(function () {
   gameController.codeOrgAPI.resetAttempt();
 });
