@@ -70,5 +70,6 @@ $('#Run_panelButton', window.parent.document).click(function () {
 });
 
 $('#Reset_panelButton', window.parent.document).click(function () {
+  console.log("resetting")
   gameController.codeOrgAPI.resetAttempt();
 });
