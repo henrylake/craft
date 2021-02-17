@@ -147,6 +147,10 @@ var modifyLevel = (currentLevel,blocksAndPositions) => {
   return newLevel
 }
 
+var set_speed = (speed) => {
+  gameController.codeOrgAPI.setSpeed(null,speed)
+}
+
 var turingHelpers = {
   modifyLevel,
   getPositionFromCoord
@@ -156,6 +160,7 @@ window.turingHelpers = turingHelpers
 window.turn = turn
 window.has_crops_at_position = has_crops_at_position
 window.ship_crops = ship_crops
+window.set_speed = set_speed
 window.wait = wait
 window.move_forward = move_forward
 window.return_home = return_home
