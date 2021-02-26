@@ -8,20 +8,22 @@ function onComplete(result) {
   completed = true
   if(result instanceof Array) {
    for(let i=0; i < result.length; i++) {
-        if(result[i] == false) {
+        if(result[i].pass == false) {
           completed = false
         }
       }
   } else {
-		completed = result
+		completed = result.pass
   }
 
   // send corresponding test results
   let testResults = {}
   if(result instanceof Array) {
    for(let i=0; i < result.length; i++) {
-     if(result[i]) {
-      testResults[i+1] = {pass:result[i]}
+     if(result[i].pass) {
+      testResults[i+1] = result[i]
+     } else if(!result[i].pass && result[i].errorMessage) {
+      testResults[i+1] = result[i]
      } else {
       const errorMessages = ["Not quite", "Try again", "This one needs a bit more work", "Have another go"];
       const random = Math.floor(Math.random() * errorMessages.length);
@@ -33,7 +35,7 @@ function onComplete(result) {
     }
   } else {
 		testResults = {
-      1: {pass: result}
+      1: result
     }
   }
   
